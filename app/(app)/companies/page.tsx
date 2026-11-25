@@ -1,0 +1,206 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect } from "react";
+import { useParams } from "next/navigation";
+import { useAction, useQuery } from "convex/react";
+import {
+  Building2,
+  MapPin,
+  Users,
+  Briefcase,
+  ExternalLink,
+  LayoutDashboard,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { api } from "@/convex/_generated/api";
+import { CompanyLogo } from "@/components/company-logo";
+import { MatchBadge } from "@/components/jobs/job-card";
+import { UserAvatar } from "@/components/user-avatar";
+import { EmptyState } from "@/components/empty-state";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge";
+import {
+  formatSalary,
+  seniorityLabel,
+  workModeLabel,
+} from "@/lib/format";
+
+export default function CompanyPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const data = useQuery(api.companies.getCompanyBySlug, { slug });
+
+  // Make sure the viewer's profile embedding exists so open roles get a
+  // % match score (same warm-up the jobs page does).
+  const ensureMyProfileEmbedding = useAction(
+    api.embeddings.ensureMyProfileEmbedding,
+  );
+  useEffect(() => {
+    void ensureMyProfileEmbedding().catch(() => {});
+  }, [ensureMyProfileEmbedding]);
+
+  if (data === undefined) {
+    return <Skeleton className="h-96 w-full rounded-2xl" />;
+  }
+  if (data === null) {
+    return <EmptyState icon={Building2} title="Company not found" />;
+  }
+
+  const { company, jobs, recruiters, employees, canManage } = data;
+
+  return (
+    <div className="mx-auto max-w-3xl space-y-4">
+      {/* Header */}
+      <div className="overflow-hidden rounded-2xl border bg-card">
+        <div
+          className="h-28 bg-gradient-to-r from-primary/25 via-accent to-apricot/40 bg-cover bg-center sm:h-36"
+          style={
+            company.coverImageUrl
+              ? { backgroundImage: `url(${company.coverImageUrl})` }
+              : undefined
+          }
+        />
+        <div className="p-5">
+        <div className="-mt-13 flex items-start gap-4">
+          <CompanyLogo
+            name={company.name}
+            src={company.logoUrl}
+            className="h-16 w-16 border-4 border-card bg-card"
+          />
+          <div className="mt-9 min-w-0 flex-1">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h1 className="font-heading text-2xl font-semibold tracking-tight">
+                {company.name}
+              </h1>
+              {canManage && (
+                <Button
+                  render={<Link href="/company" />}
+                  variant="outline"
+                  size="sm"
+                  className="gap-1.5"
+                >
+                  <LayoutDashboard className="h-4 w-4" />
+                  Manage
+                </Button>
+              )}
+            </div>
+            <p className="text-sm text-muted-foreground">{company.industry}</p>
+            <p className="mt-1.5 flex flex-wrap items-center gap-3 font-mono text-[11px] text-muted-foreground">
+              <span className="flex items-center gap-1">
+                <MapPin className="h-3 w-3" />
+                {company.location}
+              </span>
+              <span className="flex items-center gap-1">
+                <Users className="h-3 w-3" />
+                {company.size}
+              </span>
+              {company.websiteUrl && (
+                <a
+                  href={company.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 transition-colors hover:text-foreground"
+                >
+                  <ExternalLink className="h-3 w-3" />
+                  Website
+                </a>
+              )}
+            </p>
+          </div>
+        </div>
+        <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground">
+          {company.about}
+        </p>
+        </div>
+      </div>
+
+      {/* Open roles */}
+      <section className="rounded-xl border bg-card p-5">
+        <h2 className="mb-3 flex items-center gap-2 font-heading text-lg font-semibold tracking-tight">
+          <Briefcase className="h-4 w-4 text-muted-foreground" />
+          Open roles{" "}
+          <span className="font-mono text-sm font-medium text-muted-foreground">
+            ({jobs.length})
+          </span>
+        </h2>
+        {jobs.length === 0 ? (
+          <p className="text-sm text-muted-foreground">No open roles right now.</p>
+        ) : (
+          <div className="space-y-2">
+            {jobs.map((job) => (
+              <Link
+                key={job._id}
+                href={`/jobs?job=${job._id}`}
+                className="flex items-center justify-between gap-3 rounded-lg border p-3 transition-colors hover:border-primary/40 hover:bg-accent/40"
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <p className="truncate font-medium">{job.title}</p>
+                    {typeof job.matchScore === "number" && (
+                      <MatchBadge score={job.matchScore} />
+                    )}
+                  </div>
+                  <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">
+                    {workModeLabel(job.workMode)} · {seniorityLabel(job.seniority)} ·{" "}
+                    {job.location}
+                  </p>
+                </div>
+                <span className="shrink-0 font-mono text-sm font-medium">
+                  {formatSalary(job.salaryMin, job.salaryMax, job.currency)}
+                </span>
+              </Link>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Recruiters */}
+      {recruiters.length > 0 && (
+        <section className="rounded-xl border bg-card p-5">
+          <h2 className="mb-3 flex items-center gap-2 font-heading text-lg font-semibold tracking-tight">
+            <Users className="h-4 w-4 text-muted-foreground" />
+            Recruiters
+          </h2>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {recruiters.map((r) => (
+              <div key={r._id} className="flex items-center gap-3 rounded-lg border p-3">
+                <UserAvatar name={r.name} src={r.imageUrl} className="h-9 w-9" />
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium">{r.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">{r.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Employees */}
+      {employees.length > 0 && (
+        <section className="rounded-xl border bg-card p-5">
+          <h2 className="mb-3 flex items-center gap-2 font-heading text-lg font-semibold tracking-tight">
+            <Users className="h-4 w-4 text-muted-foreground" />
+            People
+          </h2>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {employees.map(({ user, profile }) => (
+              <Link
+                key={user._id}
+                href={`/in/${user.username}`}
+                className="flex items-center gap-3 rounded-lg border p-3 transition-colors hover:border-primary/40 hover:bg-accent/40"
+              >
+                <UserAvatar name={user.name} src={user.imageUrl} className="h-9 w-9" />
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium">{user.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    {profile?.headline ?? ""}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}
