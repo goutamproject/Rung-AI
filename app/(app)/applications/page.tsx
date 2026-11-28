@@ -5,18 +5,18 @@ import { useEffect } from "react";
 import { useAction, useQuery, useMutation } from "convex/react";
 import { toast } from "sonner";
 import { FileText, MapPin, Undo2, Send } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import { CompanyLogo } from "@/components/company-logo";
-import { MatchBadge } from "@/components/jobs/job-card";
-import { EmptyState } from "@/components/empty-state";
+import { api } from "../../../convex/_generated/api";
+import { CompanyLogo } from "../../../components/company-logo";
+import { MatchBadge } from "../../../components/jobs/job-card";
+import { EmptyState } from "../../../components/empty-state";
 import {
   APPLICATION_STATUS_LABEL,
   applicationStatusTone,
-} from "@/components/company/applicants-panel";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { formatSalary, timeAgo, workModeLabel } from "@/lib/format";
+} from "../../../components/company/applicants-panel";
+import { Skeleton } from "../../../components/ui/skeleton";
+import { Badge } from "../../../components/ui/badge";
+import { Button } from "../../../components/ui/button";
+import { formatSalary, timeAgo, workModeLabel } from "../../../lib/format";
 
 export default function ApplicationsPage() {
   const applications = useQuery(api.applications.getMyApplications, {});

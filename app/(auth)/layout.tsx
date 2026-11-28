@@ -1,4 +1,4 @@
-import { Logo } from "@/components/logo";
+import { Logo } from "../../components/logo";
 import { Sparkles, Briefcase, Users } from "lucide-react";
 
 export default function AuthLayout({

@@ -5,7 +5,7 @@ import {
   type AuthFn,
 } from "eve/channels/auth";
 import { createClerkClient } from "@clerk/backend";
-import { userSubscriptionIsPro } from "@/lib/billing";
+import { userSubscriptionIsPro } from "../../lib/billing";
 
 /**
  * Route auth for the Eve HTTP channel.

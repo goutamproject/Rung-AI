@@ -4,7 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useQuery, useAction } from "convex/react";
-import { usePersonalPro } from "@/lib/use-billing";
+import { usePersonalPro } from "../../../lib/use-billing";
 import {
   Search,
   Briefcase,
@@ -13,30 +13,30 @@ import {
   Bookmark,
   FileText,
 } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { JobCard, MatchBadge } from "@/components/jobs/job-card";
-import { CompanyLogo } from "@/components/company-logo";
-import { ApplyButton } from "@/components/jobs/apply-dialog";
-import { AiActionButton } from "@/components/ai/ai-action-button";
-import { EmptyState } from "@/components/empty-state";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { api } from "../../../convex/_generated/api";
+import type { Id } from "../../../convex/_generated/dataModel";
+import { JobCard, MatchBadge } from "../../../components/jobs/job-card";
+import { CompanyLogo } from "../../../components/company-logo";
+import { ApplyButton } from "../../../components/jobs/apply-dialog";
+import { AiActionButton } from "../../../components/ai/ai-action-button";
+import { EmptyState } from "../../../components/empty-state";
+import { Skeleton } from "../../../components/ui/skeleton";
+import { Input } from "../../../components/ui/input";
+import { Badge } from "../../../components/ui/badge";
+import { Button } from "../../../components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "../../../components/ui/tabs";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../../components/ui/select";
 import {
   formatSalary,
   seniorityLabel,
   workModeLabel,
-} from "@/lib/format";
+} from "../../../lib/format";
 
 function JobsInner() {
   const params = useSearchParams();

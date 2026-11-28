@@ -12,19 +12,19 @@ import {
   ExternalLink,
   LayoutDashboard,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { api } from "@/convex/_generated/api";
-import { CompanyLogo } from "@/components/company-logo";
-import { MatchBadge } from "@/components/jobs/job-card";
-import { UserAvatar } from "@/components/user-avatar";
-import { EmptyState } from "@/components/empty-state";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "../../../../components/ui/button";
+import { api } from "../../../../convex/_generated/api";
+import { CompanyLogo } from "../../../../components/company-logo";
+import { MatchBadge } from "../../../../components/jobs/job-card";
+import { UserAvatar } from "../../../../components/user-avatar";
+import { EmptyState } from "../../../../components/empty-state";
+import { Skeleton } from "../../../../components/ui/skeleton";
+import { Badge } from "../../../../components/ui/badge";
 import {
   formatSalary,
   seniorityLabel,
   workModeLabel,
-} from "@/lib/format";
+} from "../../../../lib/format";
 
 export default function CompanyPage() {
   const { slug } = useParams<{ slug: string }>();

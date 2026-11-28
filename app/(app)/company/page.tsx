@@ -13,30 +13,30 @@ import {
   Sparkles,
   UserRound,
 } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { UserAvatar } from "@/components/user-avatar";
-import { EmptyState } from "@/components/empty-state";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { api } from "../../../convex/_generated/api";
+import type { Id } from "../../../convex/_generated/dataModel";
+import { UserAvatar } from "../../../components/user-avatar";
+import { EmptyState } from "../../../components/empty-state";
+import { Skeleton } from "../../../components/ui/skeleton";
+import { Badge } from "../../../components/ui/badge";
+import { Button } from "../../../components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { timeAgo } from "@/lib/format";
-import { useCompanyPro } from "@/lib/use-billing";
+} from "../../../components/ui/select";
+import { timeAgo } from "../../../lib/format";
+import { useCompanyPro } from "../../../lib/use-billing";
 import {
   APPLICATION_STATUS_LABEL,
   applicationStatusTone,
-} from "@/components/company/applicants-panel";
+} from "../../../components/company/applicants-panel";
 import {
   PRO_STAGES,
   type PipelineStage,
-} from "@/components/company/pipeline-board";
+} from "../../../components/company/pipeline-board";
 
 const PIPELINE: PipelineStage[] = [
   "submitted",

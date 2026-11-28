@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
-import { usePersonalPro } from "@/lib/use-billing";
+import { usePersonalPro } from "../../../../lib/use-billing";
 import { toast } from "sonner";
 import {
   MapPin,
@@ -21,21 +21,21 @@ import {
   ThumbsUp,
   Newspaper,
 } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { UserAvatar } from "@/components/user-avatar";
-import { EmptyState } from "@/components/empty-state";
-import { AiActionButton } from "@/components/ai/ai-action-button";
-import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
-import { ExperienceDialog } from "@/components/profile/experience-dialog";
-import { EducationDialog } from "@/components/profile/education-dialog";
-import { SkillsEditor } from "@/components/profile/skills-editor";
-import { ImagePickerButton } from "@/components/image-input";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { timeAgo } from "@/lib/format";
-import { cn } from "@/lib/utils";
+import { api } from "../../../../convex/_generated/api";
+import type { Id } from "../../../../convex/_generated/dataModel";
+import { UserAvatar } from "../../../../components/user-avatar";
+import { EmptyState } from "../../../../components/empty-state";
+import { AiActionButton } from "../../../../components/ai/ai-action-button";
+import { EditProfileDialog } from "../../../../components/profile/edit-profile-dialog";
+import { ExperienceDialog } from "../../../../components/profile/experience-dialog";
+import { EducationDialog } from "../../../../components/profile/education-dialog";
+import { SkillsEditor } from "../../../../components/profile/skills-editor";
+import { ImagePickerButton } from "../../../../components/image-input";
+import { Skeleton } from "../../../../components/ui/skeleton";
+import { Badge } from "../../../../components/ui/badge";
+import { Button } from "../../../../components/ui/button";
+import { timeAgo } from "../../../../lib/format";
+import { cn } from "../../../../lib/utils";
 
 function Card({
   title,

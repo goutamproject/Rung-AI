@@ -3,8 +3,8 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Briefcase, Building2 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { localRedirectPath } from "@/lib/safe-redirect";
+import { cn } from "../../../../lib/utils";
+import { localRedirectPath } from "../../../../lib/safe-redirect";
 
 /**
  * Sign-up with an account-type chooser:

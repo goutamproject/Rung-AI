@@ -11,14 +11,14 @@ import {
   UserPlus,
 } from "lucide-react";
 import { toast } from "sonner";
-import { api } from "@/convex/_generated/api";
-import { UserAvatar } from "@/components/user-avatar";
-import { PostComposer } from "@/components/feed/post-composer";
-import { PostCard } from "@/components/feed/post-card";
-import { EmptyState } from "@/components/empty-state";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
-import { formatSalary } from "@/lib/format";
+import { api } from "../../../convex/_generated/api";
+import { UserAvatar } from "../../../components/user-avatar";
+import { PostComposer } from "../../../components/feed/post-composer";
+import { PostCard } from "../../../components/feed/post-card";
+import { EmptyState } from "../../../components/empty-state";
+import { Skeleton } from "../../../components/ui/skeleton";
+import { Button } from "../../../components/ui/button";
+import { formatSalary } from "../../../lib/format";
 
 export default function FeedPage() {
   const me = useQuery(api.users.getCurrentUser);

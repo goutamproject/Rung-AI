@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { Sparkles, Lock, Check } from "lucide-react";
-import { AgentChat } from "@/components/ai/agent-chat";
-import { Button } from "@/components/ui/button";
-import { isPro } from "@/lib/entitlements";
+import { AgentChat } from "../components/ai/agent-chat";
+import { Button } from "../components/ui/button";
+import { isPro } from "../lib/entitlements";
 
 const PRO_PERKS = [
   "AI Profile Optimizer — rewrite your headline, about & experience",

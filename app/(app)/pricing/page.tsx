@@ -3,11 +3,11 @@ import { auth } from "@clerk/nextjs/server";
 import { Show } from "@clerk/nextjs";
 import { CheckoutButton } from "@clerk/nextjs/experimental";
 import { Building2, Check, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { isPro, isCompanyPro } from "@/lib/entitlements";
-import { FREE_OPEN_JOB_LIMIT } from "@/lib/ai-features";
-import { cn } from "@/lib/utils";
+import { Button } from "../../../components/ui/button";
+import { Badge } from "../../../components/ui/badge";
+import { isPro, isCompanyPro } from "../../../lib/entitlements";
+import { FREE_OPEN_JOB_LIMIT } from "../../../lib/ai-features";
+import { cn } from "../../../lib/utils";
 
 const FREE_FEATURES = [
   "Create & edit your profile",

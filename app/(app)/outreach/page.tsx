@@ -1,17 +1,17 @@
 "use client";
 
 import { useQuery, useMutation } from "convex/react";
-import { usePersonalPro } from "@/lib/use-billing";
+import { usePersonalPro } from "../../../lib/use-billing";
 import { toast } from "sonner";
 import { MessagesSquare, Mail, Send, Trash2, Copy } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import { AiActionButton } from "@/components/ai/ai-action-button";
-import { EmptyState } from "@/components/empty-state";
-import { ConfirmDialog } from "@/components/confirm-dialog";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { timeAgo } from "@/lib/format";
+import { api } from "../../../convex/_generated/api";
+import { AiActionButton } from "../../../components/ai/ai-action-button";
+import { EmptyState } from "../../../components/empty-state";
+import { ConfirmDialog } from "../../../components/confirm-dialog";
+import { Skeleton } from "../../../components/ui/skeleton";
+import { Badge } from "../../../components/ui/badge";
+import { Button } from "../../../components/ui/button";
+import { timeAgo } from "../../../lib/format";
 
 export default function OutreachPage() {
   const drafts = useQuery(api.drafts.getMyOutreachDrafts, {});

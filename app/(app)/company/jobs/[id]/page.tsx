@@ -4,14 +4,14 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useQuery } from "convex/react";
 import { ArrowLeft, Briefcase, ExternalLink, MapPin } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { EmptyState } from "@/components/empty-state";
-import { ApplicantsPanel } from "@/components/company/applicants-panel";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { formatSalary, seniorityLabel, workModeLabel, timeAgo } from "@/lib/format";
+import { api } from "../../../../../convex/_generated/api";
+import type { Id } from "../../../../../convex/_generated/dataModel";
+import { EmptyState } from "../../../../../components/empty-state";
+import { ApplicantsPanel } from "../../../../../components/company/applicants-panel";
+import { Skeleton } from "../../../../../components/ui/skeleton";
+import { Badge } from "../../../../../components/ui/badge";
+import { Button } from "../../../../../components/ui/button";
+import { formatSalary, seniorityLabel, workModeLabel, timeAgo } from "../../../../../lib/format";
 
 /** All applicants for one job, company-admin only. */
 export default function CompanyJobPage() {
