@@ -3,17 +3,17 @@
 import { useState } from "react";
 import { Bookmark, MapPin, Building2 } from "lucide-react";
 import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Button } from "../../components/ui/button";
+import { Badge } from "../../components/ui/badge";
 import {
   formatSalary,
   seniorityLabel,
   timeAgo,
   workModeLabel,
-} from "@/lib/format";
-import { cn } from "@/lib/utils";
+} from "../../lib/format";
+import { cn } from "../../lib/utils";
 
 export type JobCardData = {
   _id: Id<"jobs">;

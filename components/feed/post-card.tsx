@@ -12,22 +12,22 @@ import {
 } from "lucide-react";
 import { useMutation, useQuery } from "convex/react";
 import { toast } from "sonner";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { UserAvatar } from "@/components/user-avatar";
-import { ConfirmDialog } from "@/components/confirm-dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { UserAvatar } from "../../components/user-avatar";
+import { ConfirmDialog } from "../../components/confirm-dialog";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Textarea } from "../../components/ui/textarea";
+import { Badge } from "../../components/ui/badge";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { timeAgo } from "@/lib/format";
-import { cn } from "@/lib/utils";
+} from "../../components/ui/dropdown-menu";
+import { timeAgo } from "../../lib/format";
+import { cn } from "../../lib/utils";
 
 const KIND_LABEL: Record<string, string> = {
   hiring: "Hiring",

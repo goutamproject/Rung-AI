@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { X, Plus } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Badge } from "../../components/ui/badge";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
 
 export function SkillsEditor({
   skills,

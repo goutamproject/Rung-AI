@@ -4,18 +4,18 @@ import { useRef, useState } from "react";
 import { ImagePlus, Loader2, PenLine, X } from "lucide-react";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
-import { api } from "@/convex/_generated/api";
-import { UserAvatar } from "@/components/user-avatar";
-import { useImageUpload } from "@/components/image-input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { api } from "../../convex/_generated/api";
+import { UserAvatar } from "../../components/user-avatar";
+import { useImageUpload } from "../../components/image-input";
+import { Button } from "../../components/ui/button";
+import { Textarea } from "../../components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../components/ui/select";
 
 const KINDS = [
   { value: "update", label: "Update" },

@@ -6,26 +6,26 @@ import { useRouter } from "next/navigation";
 import { useQuery, useAction } from "convex/react";
 import { toast } from "sonner";
 import { Columns3, Eye, EyeOff, Lock, Rows3, Sparkles, Users } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { UserAvatar } from "@/components/user-avatar";
-import { EmptyState } from "@/components/empty-state";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { UserAvatar } from "../../components/user-avatar";
+import { EmptyState } from "../../components/empty-state";
+import { Skeleton } from "../../components/ui/skeleton";
+import { Badge } from "../../components/ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { timeAgo } from "@/lib/format";
-import { useCompanyPro } from "@/lib/use-billing";
+} from "../../components/ui/select";
+import { Button } from "../../components/ui/button";
+import { timeAgo } from "../../lib/format";
+import { useCompanyPro } from "../../lib/use-billing";
 import {
   PipelineBoard,
   type PipelineStage,
-} from "@/components/company/pipeline-board";
+} from "../../components/company/pipeline-board";
 
 const PIPELINE = [
   "submitted",

@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useAction, useMutation } from "convex/react";
 import { toast } from "sonner";
 import { Pencil, Plus } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Textarea } from "../../components/ui/textarea";
+import { Label } from "../../components/ui/label";
 import {
   Dialog,
   DialogContent,
@@ -17,15 +17,15 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { seniorityLabel, workModeLabel } from "@/lib/format";
+} from "../../components/ui/select";
+import { seniorityLabel, workModeLabel } from "../../lib/format";
 
 const SENIORITIES = ["intern", "junior", "mid", "senior", "staff", "principal"] as const;
 const WORK_MODES = ["remote", "hybrid", "onsite"] as const;

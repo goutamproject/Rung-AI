@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEveAgent } from "eve/react";
 import { Bot, Sparkles, Send, Check, X, CircleHelp, Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Markdown } from "@/components/ai/markdown";
-import { cn } from "@/lib/utils";
+import { Button } from "../../components/ui/button";
+import { Textarea } from "../../components/ui/textarea";
+import { Input } from "../../components/ui/input";
+import { Markdown } from "../../components/ai/markdown";
+import { cn } from "../../lib/utils";
 import {
   extractAnalyzedJobTitle,
   extractRelevantJobsTargetRole,

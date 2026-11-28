@@ -13,19 +13,19 @@ import {
   Trash2,
   Users,
 } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { UserAvatar } from "@/components/user-avatar";
-import { ConfirmDialog } from "@/components/confirm-dialog";
-import { JobDialog } from "@/components/company/job-dialog";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { api } from "../../convex/_generated/api";
+import type { Id } from "../../convex/_generated/dataModel";
+import { UserAvatar } from "../../components/user-avatar";
+import { ConfirmDialog } from "../../components/confirm-dialog";
+import { JobDialog } from "../../components/company/job-dialog";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import { Skeleton } from "../../components/ui/skeleton";
 import { formatSalary, seniorityLabel, workModeLabel, timeAgo } from "@/lib/format";
 import {
   APPLICATION_STATUS_LABEL,
   applicationStatusTone,
-} from "@/components/company/applicants-panel";
+} from "../../components/company/applicants-panel";
 
 type CompanyJob = FunctionReturnType<typeof api.jobs.getCompanyJobs>[number];
 

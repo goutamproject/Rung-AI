@@ -7,10 +7,10 @@ import {
   SubscriptionDetailsButton,
 } from "@clerk/nextjs/experimental";
 import { Building2, Sparkles } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { FREE_OPEN_JOB_LIMIT } from "@/lib/ai-features";
-import { useCompanyPro } from "@/lib/use-billing";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import { FREE_OPEN_JOB_LIMIT } from "../../lib/ai-features";
+import { useCompanyPro } from "../../lib/use-billing";
 
 const COMPANY_PLAN_ID = process.env.NEXT_PUBLIC_CLERK_COMPANY_PLAN_ID ?? "";
 

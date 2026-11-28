@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 /** Fades children up once they scroll into view (see .lp-reveal in globals.css). */
 export function Reveal({

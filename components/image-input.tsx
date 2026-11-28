@@ -4,10 +4,10 @@ import { useCallback, useRef, useState } from "react";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
 import { ImagePlus, Loader2, X } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import type { Id } from "@/convex/_generated/dataModel";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { api } from "../convex/_generated/api";
+import type { Id } from "../convex/_generated/dataModel";
+import { Button } from "../components/ui/button";
+import { cn } from "../lib/utils";
 
 const MAX_BYTES = 5 * 1024 * 1024; // 5MB
 const ACCEPTED = ["image/png", "image/jpeg", "image/webp", "image/gif"];

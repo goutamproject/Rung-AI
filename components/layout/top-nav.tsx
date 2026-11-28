@@ -16,13 +16,13 @@ import {
 } from "lucide-react";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
-import { Logo } from "@/components/logo";
-import { NotificationsBell } from "@/components/layout/notifications-bell";
-import { CompanyLogo } from "@/components/company-logo";
-import { UserAvatar } from "@/components/user-avatar";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { api } from "../../convex/_generated/api";
+import { Logo } from "../../components/logo";
+import { NotificationsBell } from "../../components/layout/notifications-bell";
+import { CompanyLogo } from "../../components/company-logo";
+import { UserAvatar } from "../../components/user-avatar";
+import { Input } from "../../components/ui/input";
+import { cn } from "../../lib/utils";
 
 const NAV_ITEMS = [
   { href: "/feed", label: "Home", icon: Home, exact: true },

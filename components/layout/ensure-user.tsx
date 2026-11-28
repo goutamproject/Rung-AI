@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useConvexAuth, useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { api } from "../../convex/_generated/api";
 
 /**
  * Lazily creates the Convex `users` + `profiles` rows for the signed-in Clerk user

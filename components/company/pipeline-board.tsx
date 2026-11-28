@@ -3,14 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Lock } from "lucide-react";
-import type { Id } from "@/convex/_generated/dataModel";
-import { UserAvatar } from "@/components/user-avatar";
-import { Badge } from "@/components/ui/badge";
-import { timeAgo } from "@/lib/format";
+import type { Id } from "../../convex/_generated/dataModel";
+import { UserAvatar } from "../../components/user-avatar";
+import { Badge } from "../../components/ui/badge";
+import { timeAgo } from "../../lib/format";
 import {
   APPLICATION_STATUS_LABEL,
   applicationStatusTone,
-} from "@/components/company/applicants-panel";
+} from "../../components/company/applicants-panel";
 
 export type PipelineStage =
   | "submitted"

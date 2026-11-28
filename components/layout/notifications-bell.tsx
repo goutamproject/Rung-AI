@@ -12,17 +12,17 @@ import {
   Briefcase,
   X,
 } from "lucide-react";
-import { api } from "@/convex/_generated/api";
-import { UserAvatar } from "@/components/user-avatar";
-import { Button } from "@/components/ui/button";
+import { api } from "../../convex/_generated/api";
+import { UserAvatar } from "../../components/user-avatar";
+import { Button } from "../../components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { timeAgo } from "@/lib/format";
-import { cn } from "@/lib/utils";
+} from "../../components/ui/popover";
+import { ScrollArea } from "../../components/ui/scroll-area";
+import { timeAgo } from "../../lib/format";
+import { cn } from "../../lib/utils";
 
 const TYPE_ICON: Record<string, React.ComponentType<{ className?: string }>> = {
   like: Heart,

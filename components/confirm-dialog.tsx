@@ -10,7 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogCancel,
   AlertDialogAction,
-} from "@/components/ui/alert-dialog";
+} from "../components/ui/alert-dialog";
 
 /**
  * Destructive-action confirmation.
